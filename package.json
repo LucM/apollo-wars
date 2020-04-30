@@ -4,8 +4,8 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "dev": "ts-node-dev src/index.ts",
-    "start": "ts-node-dev src/index.ts",
+    "dev": "npx ts-node-dev src/index.ts",
+    "start": "node lib/index.js",
     "build": "rimraf ./lib && npx tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "eslint src/**/*.ts"

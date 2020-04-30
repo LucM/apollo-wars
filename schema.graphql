@@ -5,9 +5,6 @@ type Person {
   name: String!
   height: String!
   mass: Int!
-  """
-  Couleur des cheveux, ou à défaut des poils selon l'espèce.
-  """
   hairColor: String! @field(name: "hair_color")
   eyeColor: String! @field(name: "eye_color")
   birthYear: String @field(name: "birth_year")
