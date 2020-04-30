@@ -78,4 +78,4 @@ const server = new ApolloServer({
   tracing: true,
   formatError: err => new Error(err.message),
 });
-server.listen().then(() => console.log('Server is running on localhost:4000'));
+server.listen({ port: process.env.PORT || 4000 }).then(() => console.log('Server is running on localhost:4000'));
