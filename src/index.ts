@@ -76,6 +76,7 @@ const server = new ApolloServer({
     field: FieldDirective,
   },
   tracing: true,
+  playground: true,
   formatError: err => new Error(err.message),
 });
 server.listen({ port: process.env.PORT || 4000 }).then(() => console.log('Server is running on localhost:4000'));
