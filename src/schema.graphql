@@ -1,0 +1,49 @@
+directive @field(name: String!) on FIELD_DEFINITION
+
+type Person {
+  id: Int!
+  name: String!
+  height: String!
+  mass: Int!
+  """
+  Couleur des cheveux, ou à défaut des poils selon l'espèce.
+  """
+  hairColor: String! @field(name: "hair_color")
+  eyeColor: String! @field(name: "eye_color")
+  birthYear: String @field(name: "birth_year")
+  gender: String!
+  planet: Planet!
+  movies: [Movie]!
+}
+
+type Planet {
+  id: ID!
+  name: String!
+  population: Int!
+  movies: [Movie]!
+}
+
+type Movie {
+  id: ID!
+  title: String!
+  episode: Int! @field(name: "episode_id")
+  producer: String!
+  characters: [Person]!
+  releaseDate: String!
+}
+
+type Query {
+  person(id: Int!): Person!
+  persons(selected: Boolean): [Person]!
+
+  movie(id: Int!): Movie!
+  movies: [Movie]!
+
+  planet(id: Int!): Planet!
+  planets: [Planet]!
+}
+
+type Mutation {
+  selectPerson(id: Int!): [Person]
+  unselectPerson(id: Int!): [Person]
+}
