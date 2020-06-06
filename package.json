@@ -13,7 +13,7 @@
   "author": "Luc Momal",
   "license": "MIT",
   "dependencies": {
-    "apollo-server": "^2.12.0",
+    "apollo-server": "^2.14.2",
     "axios": "^0.19.2",
     "dataloader": "^2.0.0",
     "graphql": "^15.0.0"
